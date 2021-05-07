@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'addexpenses.dart';
+
 
 class Expenses extends StatelessWidget {
   final List options = [
@@ -62,7 +64,13 @@ class Expenses extends StatelessWidget {
           return Card(
             margin: EdgeInsets.all(8),
             child: ListTile(
-              onTap: () {},
+              onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => AddExpenses(),
+                  ),
+                );
+              },
               title: Text(options[index]['text']),
               leading: options[index]['icon'],
               //leading: Icon(options[index].values),
